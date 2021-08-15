@@ -7,7 +7,6 @@ import {
 } from 'react-google-maps';
 import { Patient } from '../../services/patientService';
 import distanceUtil from '../../utils/distanceUtil';
-import marker from './marker.png';
 
 interface PatientsMapProps {
   patients: ReadonlyArray<Patient>;
@@ -41,7 +40,7 @@ const PatientsMap = withScriptjs(
               key={id}
               position={{ lat: location.latitude, lng: location.longitude }}
               icon={{
-                url: marker,
+                url: `${process.env.PUBLIC_URL}/assets/images/marker.png`,
                 anchor: new google.maps.Point(17, 46),
                 scaledSize: new google.maps.Size(37, 37),
               }}
