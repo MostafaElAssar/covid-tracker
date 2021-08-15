@@ -21,7 +21,7 @@ const PatientsMap = withScriptjs(
     }, [onLoadPatients]);
 
     return (
-      <GoogleMap defaultZoom={2.5} defaultCenter={{ lat: 0, lng: 0 }}>
+      <GoogleMap defaultZoom={5} defaultCenter={{ lat: 25, lng: 15 }}>
         {patients.map(({ location, id }) => {
           if (
             patients.filter(

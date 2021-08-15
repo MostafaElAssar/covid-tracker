@@ -9,32 +9,6 @@ interface AddPatientProps {
   onError: (message: string) => void;
 }
 
-function getRandomInRange(from: number, to: number, fixed: number) {
-  return Number((Math.random() * (to - from) + from).toFixed(fixed));
-}
-
-function getRandomLocation() {
-  return {
-    longitude: getRandomInRange(15, 30, 3),
-    latitude: getRandomInRange(15, 30, 3),
-  };
-}
-
-function populate() {
-  for (let i = 0; i < 100; i++) {
-    patientService
-      .addPatient({
-        firstName: 'John',
-        lastName: 'Doe',
-        age: 25,
-        gender: 'Male',
-        location: getRandomLocation(),
-        temperature: 38,
-      })
-      .then(() => {});
-  }
-}
-
 const AddPatient = ({
   onLoadPatients,
   onSuccess,
