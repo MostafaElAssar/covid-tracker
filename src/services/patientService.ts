@@ -11,6 +11,7 @@ export type Location = {
 
 export type Patient = {
   id: string;
+  temperature: number;
   firstName: string;
   lastName: string;
   gender: string;

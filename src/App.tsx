@@ -18,8 +18,6 @@ const App = ({ onLoadPatients }: AppProps) => {
     message.error(msg);
   };
 
-  console.log(process.env);
-
   return (
     <div>
       <h1>Covid Tracker</h1>
