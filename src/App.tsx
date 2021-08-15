@@ -1,15 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { message, Row, Col } from 'antd';
+import styled from 'styled-components';
 import AddPatient from './components/AddPatient';
 import PatientsMap from './components/PatientsMap';
 import { loadPatients } from './actions/patientActions';
+import style from './App.style';
 
 interface AppProps {
+  className?: string;
   onLoadPatients: () => void;
 }
 
-const App = ({ onLoadPatients }: AppProps) => {
+const App = ({ className, onLoadPatients }: AppProps) => {
   const onSuccess = (msg: string) => {
     message.success(msg);
   };
@@ -19,7 +22,7 @@ const App = ({ onLoadPatients }: AppProps) => {
   };
 
   return (
-    <div>
+    <div className={className}>
       <h1>Covid Tracker</h1>
       <Row justify="end">
         <Col>
@@ -49,4 +52,11 @@ const mapDispatchToProps = {
   onLoadPatients: loadPatients,
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(
+  null,
+  mapDispatchToProps
+)(
+  styled(App)`
+    ${style}
+  `
+);
